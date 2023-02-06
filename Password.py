@@ -46,30 +46,27 @@ def speciale(mdp):
 def motdepasse():
 	motdepass = input("Insérez votre mot de passe :\n Il doit posséder 8 caractère,\n Il doit avoir une lettre majuscule & minuscule\n Il doit avoir un signe spéciale (!, @, #, $, %, ^, &, *).\n")
 	mdp = str(motdepass)
-	while True:
-		if longueur(mdp) == 1:
+	i = 0
+	for i in mdp:
+		if longueur(mdp) == True:
 			print("il y a asser de caractères")
 		else:
 			print(longueur(mdp))
-		if minuscule(mdp) == 1:
+		if minuscule(mdp) == True:
 			print("il y a une minuscule")
-			break
 		else:
 			print(minuscule(mdp))
-		if majuscule(mdp) == 1:
+		if majuscule(mdp) == True:
 			print("il y a une majuscule")
 		else:
 			print(majuscule(mdp))
-			break
-		if speciale(mdp) == 1:
+		if speciale(mdp) == True:
 			print("le mot de passe est bon")
 		else:
 			print(speciale(mdp))
-			break
-		if chiffres(mdp) == 1:
+		if chiffres(mdp) == True:
 			print("il y a un chiffre")
 		else:
 			print(chiffres(mdp))
-			break
 
 motdepasse()
