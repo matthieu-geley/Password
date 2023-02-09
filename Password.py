@@ -63,12 +63,12 @@ def motdepasse():
 		if verification == True:
 			Sha = hashlib.sha256(mdp.encode("UTF-8")).hexdigest()
 			Jason = 'password.json'
-			listeObj = []
-			listeObj.append({"Hash": Sha,})
-			Jason_objet = json.dumps(Dictionnaire, indent=4)
+			fichier = open("password.json", 'r')
+			listeObj = {}
+			listeObj.update({"Hash": Sha,})
+			Jason_objet = json.dumps(listeObj, indent=4)
 			with open("password.json", "a") as sortie:
 				sortie.write(Jason_objet)
-
 
 
 motdepasse()
